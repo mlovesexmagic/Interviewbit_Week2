@@ -1,5 +1,8 @@
 # Interviewbit_Week2
 
+![prework](https://github.com/mlovesexmagic/Interviewbit_Week2_Task/blob/master/week2task.gif)
+
+
 ### Hashing: 2 Sum
 ```
 class Solution:
