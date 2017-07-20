@@ -77,7 +77,7 @@ print(z.colorful(a))
 ```
 
 
-### Linked Lists: Add Two Numbers as ListsBookmark Suggest Edit
+### Linked Lists: Add Two Numbers as Lists
 
 ```
 # Definition for singly-linked list.
