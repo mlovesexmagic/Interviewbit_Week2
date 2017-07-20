@@ -75,3 +75,100 @@ a = 99
 z = Solution()
 print(z.colorful(a))
 ```
+
+
+### Linked Lists: Add Two Numbers as ListsBookmark Suggest Edit
+
+```
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    # @param A : head node of linked list
+    # @param B : head node of linked list
+    # @return the head node in the linked list
+    def addTwoNumbers(self, A, B):
+        result = ListNode(0)
+        temp = result
+        carry = 0
+        while A or B:
+            curVal = carry
+            if A:
+                curVal = curVal + A.val
+                A = A.next
+            if B:
+                curVal = curVal + B.val
+                B = B.next
+            carry = curVal / 10
+            curVal = curVal % 10
+            temp.next = ListNode(curVal)
+            temp = temp.next
+        if carry == 1:
+            temp.next = ListNode(1)
+        return result.next
+
+
+
+# --- testing ---
+node1 = ListNode(9);
+node2 = ListNode(9);
+node3 = ListNode(1);
+
+node4 = ListNode(1);
+# node5 = ListNode(6);
+# node6 = ListNode(4);
+
+node1.next = node2;
+node2.next = node3;
+
+# node4.next = node5;
+# node5.next = node6;
+
+z = Solution()
+print(z.addTwoNumbers(node1, node4))
+```
+
+### Linked Lists: Palindrome List
+```
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    # @param A : head node of linked list
+    # @return an integer
+    def lPalin(self, A):
+        curNode = A
+        a = []
+        while curNode:
+            a.append(curNode.val)
+            curNode = curNode.next
+        n = len(a)
+        for i in range(n // 2):
+            if a[i] != a[n-1-i]:
+                return 0
+        return 1
+
+
+# --- testing ---
+node1 = ListNode(1);
+node2 = ListNode(2);
+node3 = ListNode(3);
+node4 = ListNode(3);
+node5 = ListNode(2);
+node6 = ListNode(1);
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
+node4.next = node5;
+node5.next = node6;
+
+z = Solution()
+print(z.lPalin(node1))
+```
+
